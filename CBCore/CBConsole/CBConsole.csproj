@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
-    <AssemblyVersion>2016.4.29.1947</AssemblyVersion>
+    <AssemblyVersion>2016.5.2.1408</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,10 +51,6 @@
     <ProjectReference Include="..\CBLib\CBLib.csproj">
       <Project>{96adba32-56e9-476b-84e4-638adb583369}</Project>
       <Name>CBLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CBPortableLib\CBPortableLib.csproj">
-      <Project>{3f83c740-6cef-4197-a122-653fe632a50f}</Project>
-      <Name>CBPortableLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,13 +1,19 @@
 ﻿namespace CBConsole
 {
     using System;
+    using CBLib.FileManage;
+    using CBLib.ComicManage;
 
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var x = CBLib.CBStorage.GetFiles(@"d:\Bds");
-
+            ComicFileList.GetFiles(@"d:\bds");
+            ComicFileList.SetInfos();
+            //CBFileList.CreateList(@"d:\bds\out.txt");
+            //ComicFileList.Rename();
+            
+            Console.WriteLine("done!");
             Console.ReadKey(true);
         }
     }
