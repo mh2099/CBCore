@@ -56,15 +56,15 @@
                         foreach (var node in hNodes)
                         {
                             var infos = node.InnerText;
-                            var left4 = node.InnerText.deleteLineBreakAndSpace().Substring(0, 4).ToLower();
+                            var left4 = node.InnerText.DeleteLineBreakAndSpace().Substring(0, 4).ToLower();
 
                             switch (left4)
                             {
                                 case "genr": // genre
-                                    cs.SerieCategory = infos.deleteThis("Genre :");
+                                    cs.SerieCategory = infos.DeleteThis("Genre :");
                                     break;
                                 case "paru": // parution
-                                    var parution = infos.deleteThis("Parution :");
+                                    var parution = infos.DeleteThis("Parution :");
                                     switch (parution)
                                     {
                                         case "Série finie":
@@ -116,15 +116,15 @@
                             foreach (var node in hNodes3)
                             {
                                 var infos = node.InnerText;
-                                var left4 = node.InnerText.deleteLineBreakAndSpace().Substring(0, 4).ToLower();
+                                var left4 = node.InnerText.DeleteLineBreakAndSpace().Substring(0, 4).ToLower();
 
                                 switch (left4)
                                 {
                                     case "titr": // titre
-                                        album.AlbumName = HttpUtility.HtmlDecode(infos.deleteThis("Titre :"));
+                                        album.AlbumName = HttpUtility.HtmlDecode(infos.DeleteThis("Titre :"));
                                         break;
                                     case "tome": // tome
-                                        var tome = infos.deleteThis("Tome :");
+                                        var tome = infos.DeleteThis("Tome :");
                                         Byte tomeByte;
                                         Byte.TryParse(tome, out tomeByte);
                                         if (tomeByte > 0)
@@ -133,32 +133,32 @@
                                             album.AlbumOrder = i;
                                         break;
                                     case "scén": // scénario
-                                        album.AlbumScenarist = infos.deleteThis("Scénario :");
+                                        album.AlbumScenarist = infos.DeleteThis("Scénario :");
                                         break;
                                     case "dess": // dessin
-                                        album.AlbumDrawer = infos.deleteThis("Dessin :");
+                                        album.AlbumDrawer = infos.DeleteThis("Dessin :");
                                         break;
                                     case "coul": // couleurs
-                                        album.AlbumColorist = infos.deleteThis("Couleurs :");
+                                        album.AlbumColorist = infos.DeleteThis("Couleurs :");
                                         break;
                                     case "dépo": // dépot légal
-                                        var date = infos.deleteThis("Dépot légal : ");
+                                        var date = infos.DeleteThis("Dépot légal : ");
                                         var dt = new DateTime(1, 1, 1);
                                         if (date.Length >= 7)
                                             DateTime.TryParseExact(date.Substring(0, 7), "dd/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt);
                                         album.AlbumDate = dt;
                                         break;
                                     case "edit": // éditeur
-                                        album.AlbumEditor = infos.deleteThis("Editeur :");
+                                        album.AlbumEditor = infos.DeleteThis("Editeur :");
                                         break;
                                     case "coll": // collection
-                                        album.AlbumCollection = infos.deleteThis("Collection :");
+                                        album.AlbumCollection = infos.DeleteThis("Collection :");
                                         break;
                                     case "isbn": // isbn
-                                        album.AlbumIsbn = infos.deleteThis("ISBN  :");
+                                        album.AlbumIsbn = infos.DeleteThis("ISBN  :");
                                         break;
                                     case "plan": // nombre de pages
-                                        var count = infos.deleteThis("Planches :");
+                                        var count = infos.DeleteThis("Planches :");
                                         Byte countByte;
                                         Byte.TryParse(count, out countByte);
                                         album.AlbumCount = countByte;

@@ -50,7 +50,7 @@
                 cbFile.BdIndex = Convert.ToSByte(index);
             }
 
-            var regexPattern2 = new Regex(@"HS \d{2}$");
+            var regexPattern2 = new Regex(@"HS\s{0,1}\d{2}$");
             var match2 = regexPattern2.Match(Path.GetFileNameWithoutExtension(Filename));
             if (match2.Success) cbFile.BdHS = true;
 
