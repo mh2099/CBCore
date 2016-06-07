@@ -10,8 +10,8 @@
         {
             var cfl1 = new ComicFileList();
             cfl1.LoadFromDirectory(@"d:\bds");         
-            //cfl1.RenameComicFile();
-            //cfl1.ScrapingComicInfos();
+            cfl1.RenameComicFile();
+            cfl1.ScrapingComicInfos();
             cfl1.FindMissingAlbum(@"d:\bds", @"d:\missing_album.txt");
 
             //var cfl2 = new ComicFileList();
