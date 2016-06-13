@@ -5,12 +5,91 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:CBViewerX"
+    xmlns:converter="clr-namespace:CBViewerX.Converter"
     mc:Ignorable="d"
     Title="MainWindow"
-    Width="525" Height="350"
-    Style="{StaticResource {x:Type Window}}">
+    Width="525" Height="350">
+    <!--Style="{StaticResource {x:Type Window}}">-->
 
+    <Window.Resources>
+        <converter:BinaryImageConverter x:Key="imgConverter" />
+        
+        <DataTemplate x:Key="ImageCell">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Path=AlbumCoverBytes, Converter={StaticResource imgConverter}}"
+                       Width="90" Height="180" />
+                <StackPanel Margin="10,0">
+                    <TextBlock Text="{Binding Path=AlbumName}" />
+                    <TextBlock Text="{Binding Path=AlbumEditor}" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <ListView x:Name="lvAlbum"
+              IsSynchronizedWithCurrentItem="True"
+              SelectionMode="Single"
+              ItemTemplate="{StaticResource ImageCell}" />
+
+    <!--
+    <StackPanel>
+        <ListBox x:Name="lvAlbum" 
+                  Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Path=AlbumCoverBytes, Converter={StaticResource imgConverter}}"
+                               Width="90" Height="180" />
+                        <StackPanel Margin="10,0">
+                            <TextBlock Text="{Binding Path=AlbumName}" />
+                            <TextBlock Text="{Binding Path=AlbumEditor}" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+    -->
+    
+    <!--
     <Grid>
-
+        <DataGrid x:Name="dgComic"
+                  AutoGenerateColumns="False"
+                  Style="{StaticResource {x:Type DataGrid}}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=SerieName}" />
+                <DataGridTextColumn Header="Category" Binding="{Binding Path=SerieCategory}" />
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <DataGrid ItemsSource="{Binding Path=ComicAlbums}"
+                              AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Path=AlbumName}" />
+                            <DataGridTextColumn Header="Scenarist" Binding="{Binding Path=AlbumScenarist}" />
+                            <DataGridTextColumn Header="Drawer" Binding="{Binding Path=AlbumDrawer}" />
+                            <DataGridTemplateColumn Header="Cover">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Path=AlbumOrder}" Grid.Column="0" />
+                                            <Image Source="{Binding Path=AlbumCoverBytes, Converter={StaticResource imgConverter}}"
+                                                   Width="45" Height="90" Grid.Column="1" />
+                                            <TextBlock Text="{Binding Path=AlbumEditor}" Grid.Column="2" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
     </Grid>
+    -->
 </Window>

@@ -1,4 +1,4 @@
-﻿namespace CBLib.ComicManage
+﻿namespace CBWinLib.Comic
 {
     using System;
     using System.Collections.Generic;
@@ -6,58 +6,56 @@
     using System.Linq;
     using LiteDB;
     using Newtonsoft.Json;
+    using CBLib.Comic;
 
-    public class ComicSerieList
+    public static class ComicSerieIList_Xt
     {
-        #region Variables
-        private List<ComicSerie> _list = new List<ComicSerie>();
-        #endregion
-        #region Public Load
-        public void LoadFromDirectory(String CBDirectory, Boolean IsLight = false)
+        #region Load
+        public static void LoadFromDirectory(this IList<ComicSerie> List, String CBDirectory, Boolean IsLight = false)
         {
             if (!Directory.Exists(CBDirectory)) return;
 
             var directories = Directory.GetDirectories(CBDirectory);
-            
-            _list.Clear();
+
+            List.Clear();
 
             foreach (var d in directories)
             {
                 var info = Path.Combine(d, "infos.json");
-                if(File.Exists(info))
+                if (File.Exists(info))
                 {
                     var json = File.ReadAllText(info);
                     var cs = JsonConvert.DeserializeObject<ComicSerie>(json);
 
-                    if(IsLight)
-                        foreach(var ca in cs.ComicAlbums)
+                    if (IsLight)
+                        foreach (var ca in cs.ComicAlbums)
                             ca.AlbumCoverBytes = null;
 
-                    _list.Add(cs);
+                    List.Add(cs);
                 }
             }
         }
-        public void LoadFromLiteDb(String LiteDbFile)
+        public static void LoadFromLiteDb(this IList<ComicSerie> List, String LiteDbFile)
         {
             if (!File.Exists(LiteDbFile)) return;
 
-            _list.Clear();
+            List.Clear();
 
             using (var db = new LiteDatabase(LiteDbFile))
             {
                 var col = db.GetCollection<ComicSerie>("comicserie");
 
-                _list = col.FindAll().ToList(); ;
+                List = col.FindAll().ToList(); ;
             }
         }
         #endregion
         #region Save
-        public void SaveToLiteDb(String LiteDbFile)
+        public static void SaveToLiteDb(this IList<ComicSerie> List, String LiteDbFile)
         {
             using (var db = new LiteDatabase(LiteDbFile))
             {
                 var col = db.GetCollection<ComicSerie>("comicserie");
-                foreach (var cs in _list)
+                foreach (var cs in List)
                     col.Insert(cs);
             }
         }

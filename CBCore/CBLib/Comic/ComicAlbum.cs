@@ -1,9 +1,11 @@
-﻿namespace CBLib.ComicManage
+﻿namespace CBLib.Comic
 {
     using System;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
     using Newtonsoft.Json;
 
-    public class ComicAlbum
+    public class ComicAlbum : INotifyPropertyChanged
     {
         [JsonProperty(PropertyName = "name")]
         public String AlbumName { get; set; }
@@ -29,5 +31,22 @@
         public String AlbumCover { get; set; }
         [JsonProperty(PropertyName = "cover_bytes")]
         public Byte[] AlbumCoverBytes { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected bool SetProperty<T>(ref T Storage, T value, [CallerMemberName] String PropertyName = null)
+        {
+            if (Equals(Storage, value))
+                return false;
+
+            Storage = value;
+            OnPropertyChanged(PropertyName);
+            return true;
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] String PropertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
+        }
     }
 }

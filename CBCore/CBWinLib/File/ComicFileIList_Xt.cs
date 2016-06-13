@@ -1,4 +1,4 @@
-﻿namespace CBLib.FileManage
+﻿namespace CBWinLib.File
 {
     using System;
     using System.Collections.Generic;
@@ -6,32 +6,28 @@
     using System.Linq;
     using System.Text;
     using Newtonsoft.Json;
-    using ComicManage;
-    using Tools;
+    using CBLib.Comic;
+    using CBLib.File;
+    using CBLib.Tools;
+    using Comic;
 
-    public class ComicFileList
+    public static class ComicFileIList_Xt
     {
-        #region Variables
-        private List<ComicFile> _list = new List<ComicFile>();
-        #endregion
-        #region Get
-        public List<ComicFile> GetList => _list;
-        #endregion
         #region Load
-        public void LoadFromJsonFile(String CBJsonFile)
+        public static void LoadFromJsonFile(this IList<ComicFile> List, String CBJsonFile)
         {
             if (!File.Exists(CBJsonFile)) return;
 
             var json = File.ReadAllText(CBJsonFile);
-            _list = JsonConvert.DeserializeObject<List<ComicFile>>(json);
+            List = JsonConvert.DeserializeObject<IList<ComicFile>>(json);
         }
-        public void LoadFromDirectory(String CBDirectory)
+        public static void LoadFromDirectory(this IList<ComicFile> List, String CBDirectory)
         {
             if (!Directory.Exists(CBDirectory)) return;
 
             var directories = Directory.GetDirectories(CBDirectory);
 
-            _list.Clear();
+            List.Clear();
 
             foreach (var d in directories)
             {
@@ -39,38 +35,38 @@
 
                 foreach (var f in files)
                 {
-                    var cbFile = ComicFile.Create(f);
-                    if (cbFile != null) _list.Add(cbFile);
+                    var cbFile = ComicFileFactory.Create(f);
+                    if (cbFile != null) List.Add(cbFile);
                 }
             }
         }
         #endregion
         #region Save
-        public void SaveToJsonFile(String CBJsonFile)
+        public static void SaveToJsonFile(this IList<ComicFile> List, String CBJsonFile)
         {
-            var json = JsonConvert.SerializeObject(_list, Formatting.Indented);
+            var json = JsonConvert.SerializeObject(List, Formatting.Indented);
             File.WriteAllText(CBJsonFile, json);
         }
         #endregion
-        #region Public Methods
+        #region Functions
         /// <summary>
         /// Compare this ComicFile list with anotherone
         /// </summary>
         /// <param name="ComicFiles"></param>
-        public void CompareWith(ComicFileList ComicFileList, String ResultFile)
+        public static void CompareWith(this IList<ComicFile> List, IList<ComicFile> ListToCompare, String ResultFile)
         {
             var sb = new StringBuilder();
 
-            var seriesA = _list.GroupBy(a => a.FileDirectory).Select(a => a.Key);
-            var seriesB = ComicFileList.GetList.GroupBy(a => a.FileDirectory).Select(a => a.Key);
+            var seriesA = List.GroupBy(a => a.FileDirectory).Select(a => a.Key);
+            var seriesB = ListToCompare.GroupBy(a => a.FileDirectory).Select(a => a.Key);
 
             sb.AppendLine("----- serieA (non présente en B) -----");
             foreach (var serieA in seriesA)
             {
                 if (seriesB.Contains(serieA))
                 {
-                    foreach (var albumA in _list.Where(a => a.FileDirectory == serieA))
-                        if (!ComicFileList.GetList.Any(a => a.FileName == albumA.FileName))
+                    foreach (var albumA in List.Where(a => a.FileDirectory == serieA))
+                        if (!ListToCompare.Any(a => a.FileName == albumA.FileName))
                             sb.AppendLine($"{serieA}, file: {albumA.FileName}");
                 }
                 else
@@ -82,8 +78,8 @@
             {
                 if (seriesA.Contains(serieB))
                 {
-                    foreach (var albumB in ComicFileList.GetList.Where(a => a.FileDirectory == serieB))
-                        if (!_list.Any(a => a.FileName == albumB.FileName))
+                    foreach (var albumB in ListToCompare.Where(a => a.FileDirectory == serieB))
+                        if (!List.Any(a => a.FileName == albumB.FileName))
                             sb.AppendLine($"{serieB}, file: {albumB.FileName}");
                 }
                 else
@@ -98,11 +94,11 @@
         /// Create a list of all bds
         /// </summary>
         /// <param name="ComicListFile"></param>
-        public void CreateComicList(String ComicListFile)
+        public static void CreateComicList(this IList<ComicFile> List, String ComicListFile)
         {
             var sb = new StringBuilder();
 
-            foreach (var cbfile in _list)
+            foreach (var cbfile in List)
                 sb.AppendLine($"{cbfile.Realname} : {cbfile.FileName}");
 
             File.WriteAllText(ComicListFile, sb.ToString());
@@ -111,9 +107,9 @@
         /// Rename all cbz, cbr and pdf in a good format name
         /// </summary>
         /// <param name="ShowOnly"></param>
-        public void RenameComicFile(Boolean ShowOnly = false)
+        public static void RenameComicFile(this IList<ComicFile> List, Boolean ShowOnly = false)
         {
-            foreach (var cbfile in _list)
+            foreach (var cbfile in List)
             {
                 if (cbfile.BdIndex > -1)
                 {
@@ -136,30 +132,30 @@
         /// <summary>
         /// Find all missing albums and export it in a text file
         /// </summary>
-        public void FindMissingAlbum(String CBDirectory, String ExportFile)
+        public static void FindMissingAlbum(this IList<ComicFile> List, String CBDirectory, String ExportFile)
         {
             var sb = new StringBuilder();
 
             Double i = 0;
 
-            var series = _list.GroupBy(a => a.FileDirectory).Select(a => a.Key);
+            var series = List.GroupBy(a => a.FileDirectory).Select(a => a.Key);
 
             foreach (var serie in series)
             {
-                var directory = _list.Where(a => a.FileDirectory == serie).Select(a => a.FileFullDirectory).FirstOrDefault();
+                var directory = List.Where(a => a.FileDirectory == serie).Select(a => a.FileFullDirectory).FirstOrDefault();
                 var filename = Path.Combine(directory, "infos.json");
 
                 if (File.Exists(filename))
                 {
                     var json = File.ReadAllText(filename);
                     var cs = JsonConvert.DeserializeObject<ComicSerie>(json);
-                    
+
                     var files = Directory.EnumerateFiles(directory).Where(a => ComicTools.GetComicExtensions().Contains(Path.GetExtension(a)));
                     var fNumber = files.Select(a => a.GetOrder());
 
                     foreach (var album in cs.ComicAlbums)
-                        if(album.AlbumOrder > 0)
-                            if(!fNumber.Contains(album.AlbumOrder))
+                        if (album.AlbumOrder > 0)
+                            if (!fNumber.Contains(album.AlbumOrder))
                                 sb.AppendLine($"{serie.GetRealName()} - {album.AlbumOrder.ToString("00")}");
                 }
 
@@ -178,14 +174,14 @@
         /// <summary>
         /// Set informations (scrap from bedetheque) to a json file (in the album directory)
         /// </summary>
-        public void ScrapingComicInfos()
+        public static void ScrapingComicInfos(this IList<ComicFile> List)
         {
             Double i = 0;
-            var series = _list.GroupBy(a => a.FileDirectory).Select(a => a.Key);
+            var series = List.GroupBy(a => a.FileDirectory).Select(a => a.Key);
 
             foreach (var serie in series)
             {
-                var directory = _list.Where(a => a.FileDirectory == serie).Select(a => a.FileFullDirectory).FirstOrDefault();
+                var directory = List.Where(a => a.FileDirectory == serie).Select(a => a.FileFullDirectory).FirstOrDefault();
                 var filename = Path.Combine(directory, "infos.json");
 
                 if (!File.Exists(filename))

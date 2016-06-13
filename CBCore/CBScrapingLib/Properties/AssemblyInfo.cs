@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de 
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("CBConsole")]
+[assembly: AssemblyTitle("CBScrapingLib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Kain Software")]
-[assembly: AssemblyProduct("CBConsole")]
-[assembly: AssemblyCopyright("Copyright © Michaël Pégeot 2016")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("CBScrapingLib")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("3f6d2926-5bb3-4ff0-879b-b6bb093cfb43")]
+[assembly: Guid("8d5b5a05-a95e-45df-8924-ea278d6cd60a")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut 
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2016.6.13.2241")]
-[assembly: AssemblyFileVersion("2016.6.13.2241")]
+[assembly: AssemblyVersion("2016.6.8.1821")]
+[assembly: AssemblyFileVersion("2016.6.8.1821")]

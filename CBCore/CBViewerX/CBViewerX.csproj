@@ -9,12 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CBViewerX</RootNamespace>
     <AssemblyName>CBViewerX</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <AssemblyVersion>2016.6.7.0930</AssemblyVersion>
+    <AssemblyVersion>2016.6.13.2243</AssemblyVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -71,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\BinaryImageConverter.cs" />
     <Compile Include="Themes\LeftMarginMultiplierConverter.cs" />
     <Compile Include="Themes\TreeViewItemExtensions.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -121,9 +123,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CBViewerLib\CBViewerLib.csproj">
-      <Project>{c7e08cd9-ef37-4e1a-9c37-941d678d09eb}</Project>
-      <Name>CBViewerLib</Name>
+    <ProjectReference Include="..\CBLib\[lib] CBLib.csproj">
+      <Project>{8c36a8a9-5d53-46f5-a08e-61c4f134c79a}</Project>
+      <Name>[lib] CBLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CBWinLib\[lib] CBWinLib.csproj">
+      <Project>{4db6b239-d2b5-44e5-9fd2-1ce40d214040}</Project>
+      <Name>[lib] CBWinLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

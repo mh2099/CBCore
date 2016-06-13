@@ -1,4 +1,4 @@
-﻿namespace CBLib.ComicManage
+﻿namespace CBScrapingLib.ComicManage
 {
     using System;
     using System.Collections.Generic;
@@ -9,7 +9,8 @@
     using System.Web;
     using HtmlAgilityPack;
     using Newtonsoft.Json;
-    using Tools;
+    using CBLib.ComicManage;
+    using CBLib.Tools;
 
     public static class ComicScrapper
     {

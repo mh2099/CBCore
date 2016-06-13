@@ -4,15 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96ADBA32-56E9-476B-84E4-638ADB583369}</ProjectGuid>
+    <ProjectGuid>{8D5B5A05-A95E-45DF-8924-EA278D6CD60A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CBLib</RootNamespace>
-    <AssemblyName>CBLib</AssemblyName>
+    <RootNamespace>CBScrapingLib</RootNamespace>
+    <AssemblyName>CBScrapingLib</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AssemblyVersion>2016.6.7.0826</AssemblyVersion>
     <TargetFrameworkProfile />
+    <AssemblyVersion>2016.6.8.1821</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,10 +36,6 @@
       <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LiteDB, Version=1.0.4.0, Culture=neutral, PublicKeyToken=5c2fff750805920e, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiteDB.1.0.4\lib\net40\LiteDB.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -47,22 +43,20 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Net" />
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComicManage\ComicAlbum.cs" />
-    <Compile Include="ComicManage\ComicSerieList.cs" />
-    <Compile Include="ComicManage\ComicSerie.cs" />
-    <Compile Include="FileManage\ComicFile.cs" />
-    <Compile Include="FileManage\ComicFileList.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComicManage\ComicScrapper.cs" />
-    <Compile Include="Tools\ComicTools.cs" />
-    <Compile Include="Tools\StringTools.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CBLib\CBLib.csproj">
+      <Project>{8c36a8a9-5d53-46f5-a08e-61c4f134c79a}</Project>
+      <Name>CBLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

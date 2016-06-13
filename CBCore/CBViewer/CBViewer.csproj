@@ -17,7 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>CBViewer_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <AssemblyVersion>2016.6.7.0930</AssemblyVersion>
+    <AssemblyVersion>2016.6.13.2241</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -128,9 +128,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CBViewerLib\CBViewerLib.csproj">
-      <Project>{c7e08cd9-ef37-4e1a-9c37-941d678d09eb}</Project>
-      <Name>CBViewerLib</Name>
+    <ProjectReference Include="..\CBLib\[lib] CBLib.csproj">
+      <Project>{8c36a8a9-5d53-46f5-a08e-61c4f134c79a}</Project>
+      <Name>[lib] CBLib</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

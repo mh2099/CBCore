@@ -1,32 +1,12 @@
-﻿namespace CBLib.FileManage
+﻿namespace CBWinLib.File
 {
     using System;
     using System.IO;
     using System.Text.RegularExpressions;
-    using Newtonsoft.Json;
-
-    public class ComicFile
-    {
-        [JsonProperty(PropertyName = "name")]
-        public String FileName { get; set; }
-        [JsonProperty(PropertyName = "extension")]
-        public String FileExtension { get; set; }
-        [JsonProperty(PropertyName = "directory")]
-        public String FileDirectory { get; set; }
-        [JsonProperty(PropertyName = "fulldirectory")]
-        public String FileFullDirectory { get; set; }
-        [JsonProperty(PropertyName = "creationdate")]
-        public DateTime FileCreationDate { get; set; }
-        [JsonProperty(PropertyName = "size")]
-        public Int64 FileSize { get; set; }
-
-        [JsonProperty(PropertyName = "index")]
-        public SByte BdIndex { get; set; } = -1;
-        [JsonProperty(PropertyName = "hs")]
-        public Boolean BdHS { get; set; }
+    using CBLib.File;
         
-        public String Realname { get; set; }
-
+    public static class ComicFileFactory
+    {
         public static ComicFile Create(String Filename)
         {
             if (!File.Exists(Filename)) return null;
@@ -64,7 +44,7 @@
 
                 if (article.Length > 0)
                 {
-                    if(!article.Contains("L'"))
+                    if (!article.Contains("L'"))
                         article = $"{article} ";
                     word = $"{Char.ToLower(word[0])}{word.Substring(1)}";
                 }
