@@ -121,8 +121,11 @@
                         {
                             album.AlbumCover = hNode3b.Attributes["src"].Value;
 
-                            album.Note = Single.Parse(hNode3c.InnerText, CultureInfo.InvariantCulture);
-                            album.NoteCount = Single.Parse(hNode3d.InnerText, CultureInfo.InvariantCulture);
+                            if(hNode3c != null)
+                                album.Note = Single.Parse(hNode3c.InnerText, CultureInfo.InvariantCulture);
+
+                            if(hNode3d != null)
+                                album.NoteCount = Single.Parse(hNode3d.InnerText, CultureInfo.InvariantCulture);
 
                             foreach (var node in hNodes3)
                             {

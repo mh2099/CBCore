@@ -22,6 +22,7 @@
     </xs:sequence>
     <xs:attribute blend:Format="Nom de société" name="SerieName" type="xs:string" />
     <xs:attribute blend:FormatParameters="1,8" name="SerieCategory" type="xs:string" />
+    <xs:attribute blend:FormatParameters="50,8" name="SerieSynopsis" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="ComicAlbums">
     <xs:sequence>

@@ -4,126 +4,78 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:CBViewerX"
-    xmlns:Converter="clr-namespace:CBViewerX.Converter"
     xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource"
     x:Class="CBViewerX.MainWindow"
     mc:Ignorable="d"
-    Title="[CBViewerX]" Width="525" Height="450">
+    Title="[CBViewerX]" Width="800" Height="450">
 
     <Window.Resources>
-        <Converter:BinaryImageConverter x:Key="ImgConverter" />
 
         <SampleData:SampleDataSource x:Key="SampleDataSource" d:IsDataSource="True"/>
 
-        <DataTemplate x:Key="AlbumItemTemplate">
-            <Grid Width="185"
-                  Background="#FF242626">
+        <DataTemplate x:Key="SerieItemTemplate">
+            <Grid Background="#FF39383C">
                 <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
+                    <RowDefinition /> <!-- 0: title / album count / finished -->
+                    <RowDefinition /> <!-- 1: category / url / artists -->
+                    <RowDefinition /> <!-- 2: covers -->
+                    <RowDefinition /> <!-- 3: synopsis -->
                 </Grid.RowDefinitions>
-
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-
-                    <TextBlock Margin="0,1.3,0,0" Grid.Column="0">
+                    <TextBlock
+                        Text="{Binding SerieName}" FontSize="16"
+                        Foreground="Coral"
+                        Grid.Column="0" />
+                    <TextBlock
+                        Text="5 Albums"
+                        HorizontalAlignment="Right"
+                        Grid.Column="2">
+                    </TextBlock>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Text="{Binding SerieCategory}" FontSize="14"
+                        Foreground="Wheat"
+                        Grid.Column="0" />
+                    <TextBlock
+                        HorizontalAlignment="Right"
+                        Grid.Column="1">
                         <TextBlock.Text>
-                            <MultiBinding StringFormat=" {0}/{1}">
-                                <Binding Path="AlbumOrder" />
-                                <Binding Path="AlbumCount" />
+                            <MultiBinding StringFormat=" scenarist: {0}, drawer: {1}, colorist: {2}">
+                                <Binding Path="ComicAlbums[0].AlbumScenarist" />
+                                <Binding Path="ComicAlbums[0].AlbumDrawer" />
+                                <Binding Path="ComicAlbums[0].AlbumColorist" />
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>
-
-                    <TextBlock Text="{Binding AlbumName}"
-                           Foreground="#FF97BFF1" FontSize="14"
-                           Grid.Column="1" />
                 </Grid>
-                
-                <!-- Ratio 1,375 -->
-                <Image Source="{Binding AlbumCoverBytes, Converter={StaticResource ImgConverter}}"
-                       Width="95" Height="130"
-                       Grid.Row="1" />
-                <Image Source="{Binding AlbumCoverBytes}"
-                       Width="95" Height="130"
-                       Grid.Row="1" />
-
-                <TextBlock Text="{Binding AlbumDate, StringFormat='{}{0:yyyy/dd/MM}'}"
-                           Grid.Row="2" />
-
-                <TextBlock FontSize="9" Margin="0,1.3,0,0" Grid.Row="3">
-                    <TextBlock.Text>
-                        <MultiBinding StringFormat="scenarist: {0}">
-                            <Binding Path="AlbumScenarist" />
-                        </MultiBinding>
-                    </TextBlock.Text>
-                </TextBlock>
-
-                <TextBlock FontSize="9" Margin="0,1.3,0,0" Grid.Row="4">
-                    <TextBlock.Text>
-                        <MultiBinding StringFormat="drawer: {0}">
-                            <Binding Path="AlbumDrawer" />
-                        </MultiBinding>
-                    </TextBlock.Text>
-                </TextBlock>
-
-                <TextBlock FontSize="9" Margin="0,1.3,0,0" Grid.Row="5">
-                    <TextBlock.Text>
-                        <MultiBinding StringFormat="colorist: {0}">
-                            <Binding Path="AlbumColorist" />
-                        </MultiBinding>
-                    </TextBlock.Text>
-                </TextBlock>
-            </Grid>
-        </DataTemplate>
-
-        <DataTemplate x:Key="SerieItemTemplate">
-            <Grid Margin="2, 5"
-                  Background="#FF39383C">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <TextBlock Text="{Binding SerieName}"
-                           Foreground="#FFF16E81" FontSize="16"
-                           Grid.Row="0" />
-                <TextBlock Text="{Binding SerieCategory}"
-                           Grid.Row="1" />
-                <!--ScrollViewer.IsDeferredScrollingEnabled="True"-->
-                <!--<ListBox
-                    SelectionMode="Single"
-                    ScrollViewer.CanContentScroll="False"
-                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                    ItemsSource="{Binding ComicAlbums}"
-                    ItemTemplate="{DynamicResource AlbumItemTemplate}"
-                    Grid.Row="2">
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel IsItemsHost="True" Orientation="Horizontal" />
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>-->
-                <StackPanel Orientation="Horizontal" Grid.Row="2">
-                    <Image Source="{Binding ComicAlbums[0].AlbumCoverBytes, Converter={StaticResource ImgConverter}}"
-                       Margin="1" Width="95" Height="130" />
-                    <Image Source="{Binding ComicAlbums[1].AlbumCoverBytes, Converter={StaticResource ImgConverter}}"
-                       Margin="1"  Width="95" Height="130" />
-                    <Image Source="{Binding ComicAlbums[2].AlbumCoverBytes, Converter={StaticResource ImgConverter}}"
-                       Margin="1"  Width="95" Height="130" />
-                    <Image Source="{Binding ComicAlbums[3].AlbumCoverBytes, Converter={StaticResource ImgConverter}}"
-                       Margin="1"  Width="95" Height="130" />
-                    <Image Source="{Binding ComicAlbums[4].AlbumCoverBytes, Converter={StaticResource ImgConverter}}"
-                       Margin="1"  Width="95" Height="130" />
-                </StackPanel>
-
+                <Grid Grid.Row="2">
+                    <local:CoverListControl />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox AcceptsReturn="True" TextWrapping="Wrap"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             HorizontalAlignment="Stretch"
+                             IsReadOnly="True"
+                             Text="{Binding SerieSynopsis}"
+                             Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}, Path=ActualWidth}"                             
+                             Margin="2"
+                             Grid.Column="0" />
+                </Grid>
             </Grid>
         </DataTemplate>
     </Window.Resources>
@@ -138,6 +90,7 @@
             DataContext="{Binding Source={StaticResource SampleDataSource}}"
             ItemsSource="{Binding Collection}"
             ItemTemplate="{DynamicResource SerieItemTemplate}"
+            Margin="5,2"
             />
     </Grid>
 </Window>

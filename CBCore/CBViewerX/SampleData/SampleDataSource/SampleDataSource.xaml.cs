@@ -106,6 +106,25 @@ namespace Expression.Blend.SampleData.SampleDataSource
                 return this._ComicAlbums;
             }
         }
+
+        private string _SerieSynopsis = string.Empty;
+
+        public string SerieSynopsis
+        {
+            get
+            {
+                return this._SerieSynopsis;
+            }
+
+            set
+            {
+                if (this._SerieSynopsis != value)
+                {
+                    this._SerieSynopsis = value;
+                    this.OnPropertyChanged("SerieSynopsis");
+                }
+            }
+        }
     }
 
     public class ItemCollection : System.Collections.ObjectModel.ObservableCollection<Item>
