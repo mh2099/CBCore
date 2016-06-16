@@ -31,6 +31,12 @@
         public String AlbumCover { get; set; }
         [JsonProperty(PropertyName = "cover_bytes")]
         public Byte[] AlbumCoverBytes { get; set; }
+        [JsonProperty(PropertyName = "note")]
+        public Single Note { get; set; }
+        [JsonProperty(PropertyName = "note_count")]
+        public Single NoteCount { get; set; }
+        [JsonProperty(PropertyName = "filename")]
+        public String Filename { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

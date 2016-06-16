@@ -177,6 +177,7 @@
         public static void ScrapingComicInfos(this IList<ComicFile> List)
         {
             Double i = 0;
+            var output = new List<String>();
             var series = List.GroupBy(a => a.FileDirectory).Select(a => a.Key);
 
             foreach (var serie in series)
@@ -186,11 +187,16 @@
 
                 if (!File.Exists(filename))
                 {
-                    var cs = ComicScrapper.GetSerie(serie);
+                    var cs = ComicScrapper.GetSerie(directory, serie);
 
-                    var json = JsonConvert.SerializeObject(cs);
+                    if (cs.SerieId == 0)
+                        output.Add($"not found: {directory} _ {serie}");
+                    else
+                    {
+                        var json = JsonConvert.SerializeObject(cs);
 
-                    File.WriteAllText(filename, json);
+                        File.WriteAllText(filename, json);
+                    }
                 }
 
                 i++;
@@ -202,6 +208,9 @@
             }
 
             Console.Clear();
+
+            foreach (var error in output)
+                Console.WriteLine(error);
         }
         #endregion
     }

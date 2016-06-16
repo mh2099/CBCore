@@ -12,7 +12,7 @@
         static void Main()
         {
             var cfl1 = new List<ComicFile>();
-            cfl1.LoadFromDirectory(@"d:\bds");         
+            cfl1.LoadFromDirectory(@"d:\bds");
             cfl1.RenameComicFile();
             cfl1.ScrapingComicInfos();
             cfl1.FindMissingAlbum(@"d:\bds", @"d:\missing_album.txt");

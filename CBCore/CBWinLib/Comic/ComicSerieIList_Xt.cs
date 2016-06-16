@@ -8,9 +8,44 @@
     using Newtonsoft.Json;
     using CBLib.Comic;
 
+    public static class ComicSerie_Xt
+    {
+        #region Load
+        public static void LoadFromFile(this ComicSerie ComicSerie, String ComicInfoFile, Boolean IsLight = false)
+        {
+            if (!File.Exists(ComicInfoFile)) return;
+
+            var json = File.ReadAllText(ComicInfoFile);
+            ComicSerie = JsonConvert.DeserializeObject<ComicSerie>(json);
+
+            if (IsLight)
+                foreach (var ca in ComicSerie.ComicAlbums)
+                    ca.AlbumCoverBytes = null;
+        }
+        #endregion
+    }
+
     public static class ComicSerieIList_Xt
     {
         #region Load
+        public static void LoadFromFiles(this IList<ComicSerie> List, String[] ComicInfoFiles, Boolean IsLight = false)
+        {
+            List.Clear();
+
+            foreach (var comicInfoFile in ComicInfoFiles)
+            {
+                if (!File.Exists(comicInfoFile)) return;
+
+                var json = File.ReadAllText(comicInfoFile);
+                var cs = JsonConvert.DeserializeObject<ComicSerie>(json);
+
+                if (IsLight)
+                    foreach (var ca in cs.ComicAlbums)
+                        ca.AlbumCoverBytes = null;
+
+                List.Add(cs);
+            }
+        }
         public static void LoadFromDirectory(this IList<ComicSerie> List, String CBDirectory, Boolean IsLight = false)
         {
             if (!Directory.Exists(CBDirectory)) return;
@@ -50,6 +85,10 @@
         }
         #endregion
         #region Save
+        public static void SaveToXAML(this IList<ComicSerie> List, String ExportXMLFile, String ExportXAMLFile)
+        {
+
+        }
         public static void SaveToLiteDb(this IList<ComicSerie> List, String LiteDbFile)
         {
             using (var db = new LiteDatabase(LiteDbFile))

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+      *********    NE PAS MODIFIER CE FICHIER     *********
+      Ce fichier est régénéré par un outil de création.Modifier
+ .     ce fichier peut provoquer des erreurs.
+-->
+<xs:schema xmlns:blend="http://schemas.microsoft.com/expression/blend/2008" xmlns:tns="Expression.Blend.SampleData.SampleDataSource" targetNamespace="Expression.Blend.SampleData.SampleDataSource" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SampleDataSource" type="tns:SampleDataSource" />
+  <xs:complexType name="SampleDataSource">
+    <xs:sequence>
+      <xs:element name="Collection" type="tns:ItemCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ItemCollection">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="Item" type="tns:Item" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Item">
+    <xs:sequence>
+      <xs:element name="ComicAlbums" type="tns:ComicAlbums" />
+    </xs:sequence>
+    <xs:attribute blend:Format="Nom de société" name="SerieName" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1,8" name="SerieCategory" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ComicAlbums">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="ComicAlbumsItem" type="tns:ComicAlbumsItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComicAlbumsItem">
+    <xs:attribute name="AlbumName" type="xs:string" />
+    <xs:attribute blend:FormatParameters="1" name="AlbumOrder" type="xs:double" />
+    <xs:attribute blend:FormatParameters="1" name="AlbumCount" type="xs:double" />
+    <xs:attribute blend:Format="Date" name="AlbumDate" type="xs:string" />
+    <xs:attribute blend:Format="Nom" name="AlbumScenarist" type="xs:string" />
+    <xs:attribute blend:Format="Nom" name="AlbumDrawer" type="xs:string" />
+    <xs:attribute blend:Format="Nom" name="AlbumColorist" type="xs:string" />
+    <xs:attribute name="AlbumCoverBytes" type="tns:Basic-Image" />
+  </xs:complexType>
+  <xs:simpleType name="Basic-Image">
+    <xs:restriction base="xs:anyURI" />
+  </xs:simpleType>
+</xs:schema>

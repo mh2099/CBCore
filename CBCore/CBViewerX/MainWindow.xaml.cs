@@ -17,13 +17,16 @@
 
         private void Load()
         {
-            /*var list = new ObservableCollection<ComicSerie>();
-            list.LoadFromDirectory(@"d:\bds", IsLight: true);
-            dgComic.ItemsSource = list;*/
-
-            var list2 = new ObservableCollection<ComicAlbum>();
-            list2.LoadFromFile(@"D:\Bds\666\infos.json");
-            lvAlbum.ItemsSource = list2;
+            var list = new ObservableCollection<ComicSerie>();
+            /*list.LoadFromFiles(new[] {
+                    @"D:\Bds\4 princes de Ganahan (Les)\infos.json",
+                    @"D:\Bds\666\infos.json",
+                    @"D:\Bds\6666\infos.json",
+                    @"D:\Bds\Berceuse assassine\infos.json",
+                    @"D:\Bds\Blacksad\infos.json"
+                });*/
+            list.LoadFromDirectory(@"d:\bds"); //, IsLight: true);
+            listBox.ItemsSource = list;
         }
     }
 }

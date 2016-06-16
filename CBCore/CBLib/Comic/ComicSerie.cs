@@ -26,6 +26,8 @@
         public List<String> AlbumUrls { get; set; } = new List<String>();
         [JsonProperty(PropertyName = "albums")]
         public List<ComicAlbum> ComicAlbums { get; set; } = new List<ComicAlbum>();
+        [JsonProperty(PropertyName = "directory")]
+        public String Directory { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

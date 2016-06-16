@@ -23,7 +23,7 @@
             public String category { get; set; }
         }
 
-        public static ComicSerie GetSerie(String ComicName)
+        public static ComicSerie GetSerie(String Directory, String ComicName)
         {
             // Get series informations
             var serieUrl = $"http://www.bedetheque.com/ajax/tout?term={ComicName}";
@@ -37,6 +37,7 @@
             if (request != null)
                 if (request.Count > 0)
                 {
+                    cs.Directory = Directory;
                     cs.SerieId = Convert.ToUInt16(request.Select(a => a.id).FirstOrDefault().Substring(1));
                     cs.SerieName = ComicName.GetRealName();
                     var name = cs.SerieName.Replace(" ", "-").Replace("'", "").Replace(",", "").Replace("$", "S");
@@ -104,15 +105,24 @@
                         // Get information for this album
                         var album = new ComicAlbum();
 
+                        album.Filename = $"{cs.SerieName} - {i.ToString("00")}";
+
                         var hWeb3 = new HtmlWeb();
                         var hDoc3 = hWeb.Load(album_url);
 
-                        var hNode3 = hDoc3.DocumentNode.SelectSingleNode("//img[@class='fadeover image_album']/@src");
+                        var hNode3a = hDoc3.DocumentNode.SelectSingleNode("//div[@class='bandeau-wrapper albums']");
+                        var hNode3b = hDoc3.DocumentNode.SelectSingleNode("//img[@class='fadeover image_album']/@src");
+                        var hNode3c = hDoc3.DocumentNode.SelectSingleNode("//span[@itemprop='ratingValue']");
+                        var hNode3d = hDoc3.DocumentNode.SelectSingleNode("//span[@itemprop='ratingCount']");
+
                         var hNodes3 = hDoc3.DocumentNode.SelectNodes("(//ul[@class='infos-albums'])/li");
 
-                        if (hNode3 != null && hNodes3 != null)
+                        if (hNode3b != null && hNodes3 != null)
                         {
-                            album.AlbumCover = hNode3.Attributes["src"].Value;
+                            album.AlbumCover = hNode3b.Attributes["src"].Value;
+
+                            album.Note = Single.Parse(hNode3c.InnerText, CultureInfo.InvariantCulture);
+                            album.NoteCount = Single.Parse(hNode3d.InnerText, CultureInfo.InvariantCulture);
 
                             foreach (var node in hNodes3)
                             {
@@ -167,6 +177,9 @@
                                 }
                             }
                         }
+
+                        if (hNode3a == null)
+                            album.AlbumOrder = 1;
 
                         album.AlbumCoverBytes = webClient.DownloadData(album.AlbumCover);
 

@@ -1,0 +1,117 @@
+﻿<!--
+      *********    NE PAS MODIFIER CE FICHIER     *********
+      Ce fichier est régénéré par un outil de création.Modifier
+ .     ce fichier peut provoquer des erreurs.
+-->
+<SampleData:SampleDataSource xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.SampleDataSource">
+	<SampleData:SampleDataSource.Collection>
+		<SampleData:Item SerieName="Serie #1" SerieCategory="Horreur">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Nam sed aenean class" AlbumOrder="1" AlbumCount="2" AlbumDate="November 5, 2003" AlbumScenarist="Aaberg, Jesper" AlbumDrawer="Aaberg, Jesper" AlbumColorist="Aaberg, Jesper" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Dis cras" AlbumOrder="1" AlbumCount="2" AlbumDate="December 29, 2006" AlbumScenarist="Adams, Ellen" AlbumDrawer="Adams, Ellen" AlbumColorist="Adams, Ellen" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Aliquam duis mauris maecenas" AlbumOrder="1" AlbumCount="2" AlbumDate="January 19, 2004" AlbumScenarist="Adams, Terry" AlbumDrawer="Adams, Terry" AlbumColorist="Adams, Terry" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Nullam praesent est curae" AlbumOrder="1" AlbumCount="2" AlbumDate="December 22, 2007" AlbumScenarist="Adams, Terry" AlbumDrawer="Adams, Terry" AlbumColorist="Adams, Terry" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Hac accumsan leo" AlbumOrder="1" AlbumCount="2" AlbumDate="August 23, 2003" AlbumScenarist="Pfeiffer, Michael" AlbumDrawer="Pfeiffer, Michael" AlbumColorist="Pfeiffer, Michael" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #2" SerieCategory="Science-Fiction">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Nunc donec bibendum" AlbumOrder="9" AlbumCount="1" AlbumDate="May 27, 2007" AlbumScenarist="Philips, Carol" AlbumDrawer="Philips, Carol" AlbumColorist="Philips, Carol" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Aptent auctor mus dictumst" AlbumOrder="1" AlbumCount="2" AlbumDate="May 24, 2006" AlbumScenarist="Poe, Toni" AlbumDrawer="Poe, Toni" AlbumColorist="Poe, Toni" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Eleifend congue integer amet" AlbumOrder="7" AlbumCount="2" AlbumDate="September 19, 2004" AlbumScenarist="Hicks, Cassie" AlbumDrawer="Hicks, Cassie" AlbumColorist="Hicks, Cassie" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Nec cursus facilisi quisque" AlbumOrder="5" AlbumCount="2" AlbumDate="August 10, 2003" AlbumScenarist="Argentiero, Luca" AlbumDrawer="Argentiero, Luca" AlbumColorist="Argentiero, Luca" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Dictum non per" AlbumOrder="8" AlbumCount="5" AlbumDate="September 20, 2007" AlbumScenarist="Perry, Brian" AlbumDrawer="Perry, Brian" AlbumColorist="Perry, Brian" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #3" SerieCategory="Policier">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Etiam sed" AlbumOrder="1" AlbumCount="7" AlbumDate="August 9, 2006" AlbumScenarist="Ramos, Luciana" AlbumDrawer="Ramos, Luciana" AlbumColorist="Ramos, Luciana" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Vivamus fusce" AlbumOrder="1" AlbumCount="9" AlbumDate="February 25, 2008" AlbumScenarist="Barber, David" AlbumDrawer="Barber, David" AlbumColorist="Barber, David" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Sem aliquam" AlbumOrder="3" AlbumCount="2" AlbumDate="July 20, 2008" AlbumScenarist="Jamison, Jay" AlbumDrawer="Jamison, Jay" AlbumColorist="Jamison, Jay" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Aliquet ante sit" AlbumOrder="1" AlbumCount="8" AlbumDate="September 10, 2006" AlbumScenarist="Reid, Miles" AlbumDrawer="Reid, Miles" AlbumColorist="Reid, Miles" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Vel lectus arcu" AlbumOrder="3" AlbumCount="3" AlbumDate="September 5, 2005" AlbumScenarist="Bowen, Eli" AlbumDrawer="Bowen, Eli" AlbumColorist="Bowen, Eli" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #4" SerieCategory="Horreur">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Diam libero ligula faucibus" AlbumOrder="4" AlbumCount="8" AlbumDate="December 11, 2007" AlbumScenarist="Kane, John" AlbumDrawer="Kane, John" AlbumColorist="Kane, John" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Nam litora blandit" AlbumOrder="6" AlbumCount="3" AlbumDate="September 26, 2003" AlbumScenarist="Sarin, Raman" AlbumDrawer="Sarin, Raman" AlbumColorist="Sarin, Raman" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Lorem luctus habitant" AlbumOrder="4" AlbumCount="2" AlbumDate="April 24, 2001" AlbumScenarist="Sato, Naoki" AlbumDrawer="Sato, Naoki" AlbumColorist="Sato, Naoki" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Commodo morbi magnis" AlbumOrder="8" AlbumCount="4" AlbumDate="September 30, 2005" AlbumScenarist="Silva, Alexandre" AlbumDrawer="Silva, Alexandre" AlbumColorist="Silva, Alexandre" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Mattis nulla" AlbumOrder="2" AlbumCount="2" AlbumDate="April 7, 2001" AlbumScenarist="Cook, Kevin" AlbumDrawer="Cook, Kevin" AlbumColorist="Cook, Kevin" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #5" SerieCategory="Science-Fiction">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Eget inceptos sed conubia" AlbumOrder="5" AlbumCount="3" AlbumDate="February 25, 2007" AlbumScenarist="Li, Yuhong" AlbumDrawer="Li, Yuhong" AlbumColorist="Li, Yuhong" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Proin dis elit" AlbumOrder="1" AlbumCount="9" AlbumDate="December 26, 2002" AlbumScenarist="Strande, Amy" AlbumDrawer="Strande, Amy" AlbumColorist="Strande, Amy" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Mauris interdum" AlbumOrder="8" AlbumCount="5" AlbumDate="November 15, 2007" AlbumScenarist="Makovac, Zrinka" AlbumDrawer="Makovac, Zrinka" AlbumColorist="Makovac, Zrinka" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Enim lobortis erat est" AlbumOrder="9" AlbumCount="6" AlbumDate="April 11, 2002" AlbumScenarist="Miller, Ben" AlbumDrawer="Miller, Ben" AlbumColorist="Miller, Ben" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Nascetur eros" AlbumOrder="7" AlbumCount="3" AlbumDate="January 16, 2008" AlbumScenarist="Orton, Jon" AlbumDrawer="Orton, Jon" AlbumColorist="Orton, Jon" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #6" SerieCategory="Policier">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Hac cubilia" AlbumOrder="3" AlbumCount="9" AlbumDate="June 5, 2008" AlbumScenarist="Zhang, Larry" AlbumDrawer="Zhang, Larry" AlbumColorist="Zhang, Larry" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Nibh augue" AlbumOrder="9" AlbumCount="4" AlbumDate="January 16, 2005" AlbumScenarist="Gladkikh, Andrey" AlbumDrawer="Gladkikh, Andrey" AlbumColorist="Gladkikh, Andrey" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Dolor dapibus" AlbumOrder="9" AlbumCount="8" AlbumDate="December 3, 2003" AlbumScenarist="Meyer, April" AlbumDrawer="Meyer, April" AlbumColorist="Meyer, April" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Fames egestas pharetra nisi" AlbumOrder="6" AlbumCount="9" AlbumDate="June 16, 2003" AlbumScenarist="Clark, Molly" AlbumDrawer="Clark, Molly" AlbumColorist="Clark, Molly" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Placerat euismod mollis" AlbumOrder="7" AlbumCount="1" AlbumDate="July 1, 2006" AlbumScenarist="Dellamore, Luca" AlbumDrawer="Dellamore, Luca" AlbumColorist="Dellamore, Luca" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #7" SerieCategory="Horreur">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Montes felis ipsum" AlbumOrder="9" AlbumCount="5" AlbumDate="March 14, 2006" AlbumScenarist="Aaberg, Jesper" AlbumDrawer="Aaberg, Jesper" AlbumColorist="Aaberg, Jesper" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Feugiat nostra nisl" AlbumOrder="7" AlbumCount="1" AlbumDate="November 15, 2002" AlbumScenarist="Adams, Ellen" AlbumDrawer="Adams, Ellen" AlbumColorist="Adams, Ellen" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Ornare justo" AlbumOrder="8" AlbumCount="2" AlbumDate="August 29, 2006" AlbumScenarist="Adams, Terry" AlbumDrawer="Adams, Terry" AlbumColorist="Adams, Terry" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Leo lacus nunc odio" AlbumOrder="3" AlbumCount="5" AlbumDate="August 31, 2003" AlbumScenarist="Adams, Terry" AlbumDrawer="Adams, Terry" AlbumColorist="Adams, Terry" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Pulvinar sagittis gravida" AlbumOrder="4" AlbumCount="2" AlbumDate="February 9, 2008" AlbumScenarist="Pfeiffer, Michael" AlbumDrawer="Pfeiffer, Michael" AlbumColorist="Pfeiffer, Michael" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #8" SerieCategory="Science-Fiction">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Iaculis orci pede" AlbumOrder="2" AlbumCount="8" AlbumDate="August 4, 2002" AlbumScenarist="Philips, Carol" AlbumDrawer="Philips, Carol" AlbumColorist="Philips, Carol" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Platea lorem quam" AlbumOrder="9" AlbumCount="2" AlbumDate="May 28, 2005" AlbumScenarist="Poe, Toni" AlbumDrawer="Poe, Toni" AlbumColorist="Poe, Toni" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Senectus mus" AlbumOrder="4" AlbumCount="1" AlbumDate="July 7, 2006" AlbumScenarist="Hicks, Cassie" AlbumDrawer="Hicks, Cassie" AlbumColorist="Hicks, Cassie" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Nec quis non lacinia" AlbumOrder="3" AlbumCount="2" AlbumDate="March 7, 2003" AlbumScenarist="Argentiero, Luca" AlbumDrawer="Argentiero, Luca" AlbumColorist="Argentiero, Luca" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Laoreet urna per" AlbumOrder="9" AlbumCount="8" AlbumDate="December 7, 2003" AlbumScenarist="Perry, Brian" AlbumDrawer="Perry, Brian" AlbumColorist="Perry, Brian" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #9" SerieCategory="Science-Fiction">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Primis magna" AlbumOrder="2" AlbumCount="2" AlbumDate="April 9, 2008" AlbumScenarist="Ramos, Luciana" AlbumDrawer="Ramos, Luciana" AlbumColorist="Ramos, Luciana" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Cras natoque sociosqu rutrum" AlbumOrder="5" AlbumCount="4" AlbumDate="October 2, 2005" AlbumScenarist="Barber, David" AlbumDrawer="Barber, David" AlbumColorist="Barber, David" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Posuere sed potenti suscipit" AlbumOrder="1" AlbumCount="6" AlbumDate="June 4, 2007" AlbumScenarist="Jamison, Jay" AlbumDrawer="Jamison, Jay" AlbumColorist="Jamison, Jay" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Massa pretium" AlbumOrder="1" AlbumCount="1" AlbumDate="June 14, 2001" AlbumScenarist="Reid, Miles" AlbumDrawer="Reid, Miles" AlbumColorist="Reid, Miles" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Torquent metus sem" AlbumOrder="6" AlbumCount="2" AlbumDate="February 23, 2006" AlbumScenarist="Bowen, Eli" AlbumDrawer="Bowen, Eli" AlbumColorist="Bowen, Eli" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #10" SerieCategory="Policier">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Duis sapien" AlbumOrder="2" AlbumCount="2" AlbumDate="November 13, 2007" AlbumScenarist="Kane, John" AlbumDrawer="Kane, John" AlbumColorist="Kane, John" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Rhoncus sodales ultrices semper" AlbumOrder="1" AlbumCount="6" AlbumDate="April 16, 2002" AlbumScenarist="Sarin, Raman" AlbumDrawer="Sarin, Raman" AlbumColorist="Sarin, Raman" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Vehicula morbi nunc amet" AlbumOrder="5" AlbumCount="6" AlbumDate="June 2, 2005" AlbumScenarist="Sato, Naoki" AlbumDrawer="Sato, Naoki" AlbumColorist="Sato, Naoki" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Viverra ante arcu" AlbumOrder="1" AlbumCount="7" AlbumDate="June 20, 2001" AlbumScenarist="Silva, Alexandre" AlbumDrawer="Silva, Alexandre" AlbumColorist="Silva, Alexandre" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Neque netus" AlbumOrder="6" AlbumCount="6" AlbumDate="November 5, 2003" AlbumScenarist="Cook, Kevin" AlbumDrawer="Cook, Kevin" AlbumColorist="Cook, Kevin" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #11" SerieCategory="Policier">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Nam class sed" AlbumOrder="4" AlbumCount="1" AlbumDate="November 5, 2003" AlbumScenarist="Aaberg, Jesper" AlbumDrawer="Adams, Ellen" AlbumColorist="Adams, Terry" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Nam aliquam" AlbumOrder="4" AlbumCount="5" AlbumDate="November 5, 2003" AlbumScenarist="Adams, Terry" AlbumDrawer="Pfeiffer, Michael" AlbumColorist="Philips, Carol" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Class curae sed" AlbumOrder="8" AlbumCount="1" AlbumDate="December 29, 2006" AlbumScenarist="Poe, Toni" AlbumDrawer="Hicks, Cassie" AlbumColorist="Argentiero, Luca" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Maecenas integer praesent" AlbumOrder="5" AlbumCount="5" AlbumDate="January 19, 2004" AlbumScenarist="Perry, Brian" AlbumDrawer="Ramos, Luciana" AlbumColorist="Barber, David" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Donec accumsan quisque vivamus" AlbumOrder="4" AlbumCount="6" AlbumDate="December 22, 2007" AlbumScenarist="Jamison, Jay" AlbumDrawer="Reid, Miles" AlbumColorist="Bowen, Eli" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+		<SampleData:Item SerieName="Serie #12" SerieCategory="Policier">
+			<SampleData:Item.ComicAlbums>
+				<SampleData:ComicAlbumsItem AlbumName="Aenean dis" AlbumOrder="9" AlbumCount="3" AlbumDate="August 23, 2003" AlbumScenarist="Kane, John" AlbumDrawer="Sarin, Raman" AlbumColorist="Sato, Naoki" AlbumCoverBytes="SampleDataSource_Files\image01.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Duis mauris est" AlbumOrder="8" AlbumCount="1" AlbumDate="May 27, 2007" AlbumScenarist="Silva, Alexandre" AlbumDrawer="Cook, Kevin" AlbumColorist="Li, Yuhong" AlbumCoverBytes="SampleDataSource_Files\image02.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Nunc amet hac" AlbumOrder="6" AlbumCount="5" AlbumDate="May 24, 2006" AlbumScenarist="Strande, Amy" AlbumDrawer="Makovac, Zrinka" AlbumColorist="Miller, Ben" AlbumCoverBytes="SampleDataSource_Files\image03.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Aliquam aliquet nullam" AlbumOrder="6" AlbumCount="4" AlbumDate="September 19, 2004" AlbumScenarist="Orton, Jon" AlbumDrawer="Zhang, Larry" AlbumColorist="Gladkikh, Andrey" AlbumCoverBytes="SampleDataSource_Files\image04.png"/>
+				<SampleData:ComicAlbumsItem AlbumName="Etiam bibendum dictumst" AlbumOrder="4" AlbumCount="2" AlbumDate="August 10, 2003" AlbumScenarist="Meyer, April" AlbumDrawer="Clark, Molly" AlbumColorist="Dellamore, Luca" AlbumCoverBytes="SampleDataSource_Files\image05.png"/>
+		</SampleData:Item.ComicAlbums>
+		</SampleData:Item>
+	</SampleData:SampleDataSource.Collection>
+</SampleData:SampleDataSource>
